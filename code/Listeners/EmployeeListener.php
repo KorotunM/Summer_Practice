@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie('email_value',$_POST['email'], time() + 24 * 60 * 60);
         setcookie('position_value',$_POST['position'], time() + 24 * 60 * 60);
         print($_COOKIE['id_value']);
-        //header('Location: ../Index/EmployeeIndex.php');
+        header('Location: ../Index/EmployeeIndex.php');
     }
     elseif (isset($_POST['delete'])) {
         try {

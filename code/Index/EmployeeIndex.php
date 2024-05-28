@@ -93,7 +93,7 @@ else {
     setcookie('position_error', '', 100000);
     setcookie('department_error', '', 100000);
   }
-
+  print(!empty($_COOKIE['id_value']));
   if (!empty($_COOKIE['id_value'])) {
     $department_id = $_POST['department'];
     try {
@@ -113,6 +113,6 @@ else {
         exit();
     }
 }
-header('Location: ../Tables/EmployeeTable.php');
+//header('Location: ../Tables/EmployeeTable.php');
 
 }
