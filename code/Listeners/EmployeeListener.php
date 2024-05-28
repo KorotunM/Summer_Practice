@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include('../password.php');
-    if ($_POST['action'] == 'change') {
+    if (isset($_POST['change'])) {
         setcookie('id_value', $_POST['employee_id'], time() + 24 * 60 * 60);
         setcookie('departmentid_value',$_POST['department_id'], time() + 24 * 60 * 60);
         setcookie('fio_value',$_POST['fio'], time() + 24 * 60 * 60);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie('position_value',$_POST['position'], time() + 24 * 60 * 60);
         header('Location: ../Index/EmployeeIndex.php');
     }
-    elseif ($_POST['action'] == 'delete') {
+    elseif (isset($_POST['delete'])) {
         try {
             include('../password.php');
             $id_emp = $_POST['employee_id'];
