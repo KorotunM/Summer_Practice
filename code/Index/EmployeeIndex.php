@@ -37,7 +37,7 @@ if($errors['position']){
 if($errors['department']){
   setcookie('department_error','',100000);
   setcookie('department_value','',100000);
-  $messages['department'] = '<div class="error"> Выберите должность </div>';
+  $messages['department'] = '<div class="error"> Выберите департамент </div>';
 }
 
   $values = array();

@@ -49,7 +49,7 @@
       foreach($department as $dept){
         printf('
           <option %s >%s</option>'
-          , $dept['departnment_name'] == $values['department_name'] ?  'selected' : '', $dept['department_name']
+          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $dept['department_name']
         );
       }
       ?>
