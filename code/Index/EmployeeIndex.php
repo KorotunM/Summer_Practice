@@ -117,5 +117,5 @@ else {
       exit();
     }
   }
-  header('Location: ../Tables/EmployeeTable');
+  header('Location: ../Tables/EmployeeTable.php');
 }
