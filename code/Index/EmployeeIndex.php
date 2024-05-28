@@ -47,7 +47,7 @@ if($errors['department']){
   $values['position'] = empty($_COOKIE['position_value']) ? '' : strip_tags($_COOKIE['position_value']);
   $values['department'] = empty($_COOKIE['department_value']) ? '' : (strip_tags($_COOKIE['department_value']));
 
-  include('form.php');
+  include('../Forms/EmployeeForm.php');
 }
 else {
  $errors = FALSE;
