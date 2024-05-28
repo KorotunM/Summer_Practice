@@ -44,7 +44,6 @@ $employee = $sth->fetchAll();
     <th>Email</th>
     <th>Должность</th>
     <th class="action"></th>
-    <th class="action"></th>
   </tr>
   <?php
     foreach($employee as $emp) {
