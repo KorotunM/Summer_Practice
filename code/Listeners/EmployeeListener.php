@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $indexU = 0;
             for ($i = 1; $i <= $countId; $i++) {
                 $tempU = intval($employee[$indexU]['employee_id']);
-                $stmt = $db->prepare("UPDATE employee SET id = ? where id = $tempU");
+                $stmt = $db->prepare("UPDATE employee SET employee_id = ? where employee_id = $tempU");
                 $stmt->execute([$i]);
                 $indexU++;
             }
