@@ -50,6 +50,7 @@ if($errors['department']){
   include('../Forms/EmployeeForm.php');
 }
 else {
+  include('../password.php');
  $errors = FALSE;
  if (empty($_POST['fio']) || !preg_match('/^[а-яА-ЯёЁa-zA-Z\s-]{1,150}$/u', $_POST['fio'])) {
    setcookie('fio_error', '1', time() + 24 * 60 * 60);
