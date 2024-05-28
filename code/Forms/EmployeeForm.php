@@ -46,10 +46,12 @@
       ?>
       <select name="department"  <?php if ($errors['department']) {print 'class="error"';} ?> >
       <?php
+      $index = 0;
       foreach($department as $dept){
+        $index++;
         printf('
-          <option %s >%s</option>'
-          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $dept['department_name']
+          <option %s value = "%d" >%s</option>'
+          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $index, $dept['department_name']
         );
       }
       ?>
