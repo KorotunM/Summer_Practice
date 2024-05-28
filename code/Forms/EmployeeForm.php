@@ -11,7 +11,6 @@
 <body>
 <form action="../Index/EmployeeIndex.php" method="POST">
     <h2>Форма Сотрудника</h2>
-
     <label>
       <h5>Введите ваше ФИО:</h5><br />
       <input name="fio" type = "text" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" placeholder="ФИО" />

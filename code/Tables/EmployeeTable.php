@@ -1,13 +1,13 @@
 
 
 <?php
-    // if (!empty($_COOKIE['save'])) {
-    //     setcookie('save', '', 100000);
-    //     print('<div class="message">Изменение произошло успешно</div><br>');
-    // }
-    // foreach($_COOKIE as $key => $value) {
-    //     setcookie($key, '', 100000);
-    // }
+    if (!empty($_COOKIE['save'])) {
+        setcookie('save', '', 100000);
+        print('<div class="message">Изменение произошло успешно</div><br>');
+    }
+    foreach($_COOKIE as $key => $value) {
+        setcookie($key, '', 100000);
+    }
 ?>
 
 <!DOCTYPE html>
