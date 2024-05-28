@@ -75,7 +75,7 @@ $employee = $sth->fetchAll();
     }
   ?>
 </table>
-<form action="../Forms/EmployeeIndex.php" method="GET">
+<form action="../Index/EmployeeIndex.php" method="GET">
 <input class = "AddBut" type="submit" value="Добавить" />
 </form>
 </body>
