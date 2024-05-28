@@ -95,28 +95,24 @@ else {
   }
 
   if (!empty($_COOKIE['id_value'])) {
-        $department_name = $_POST['department'];
-        try{
-        $stmt = $db->prepare("UPDATE employee SET fio = ?, tel = ?, email = ?, position = ?, department_id = 
-        (SELECT department_id FROM department where department_name = $department_name) Where id = ?");
-        $stmt->execute([$_POST['fio'], $_POST['tel'], $_POST['email'], $_POST['position'], $_COOKIE['id_value']]);
-      }
-      catch(PDOException $ex){
+    $department_id = $_POST['department'];
+    try {
+        $stmt = $db->prepare("UPDATE employee SET fio = ?, tel = ?, email = ?, position = ?, department_id = ? WHERE employee_id = ?");
+        $stmt->execute([$_POST['fio'], $_POST['tel'], $_POST['email'], $_POST['position'], $department_id, $_COOKIE['id_value']]);
+    } catch (PDOException $ex) {
         print('Error : ' . $ex->getMessage());
         exit();
-      }
-  }
-  else {
+    }
+} else {
+    $department_id = $_POST['department'];
     try {
-    $department_name = $_POST['department'];
-      $stmt = $db->prepare("INSERT INTO Person SET fio = ?, tel = ?, email = ?, position = ?, department_id = 
-        (SELECT department_id FROM department where department_name = $department_name)");
-      $stmt->execute([$_POST['fio'], $_POST['tel'], $_POST['email'], $_POST['position']]);
+        $stmt = $db->prepare("INSERT INTO employee (fio, tel, email, position, department_id) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$_POST['fio'], $_POST['tel'], $_POST['email'], $_POST['position'], $department_id]);
+    } catch (PDOException $ex) {
+        print('Error : ' . $ex->getMessage());
+        exit();
     }
-    catch(PDOException $ex){
-      print('Error : ' . $ex->getMessage());
-      exit();
-    }
-  }
-  header('Location: ../Tables/EmployeeTable.php');
+}
+header('Location: ../Tables/EmployeeTable.php');
+
 }
