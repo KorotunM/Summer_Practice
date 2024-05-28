@@ -50,8 +50,8 @@
       foreach($department as $dept){
         $index++;
         printf('
-          <option %s value = "%s" >%s</option>'
-          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $dept['department_name'], $dept['department_name']
+          <option %s value = "%d" >%s</option>'
+          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $index, $dept['department_name']
         );
       }
       ?>
