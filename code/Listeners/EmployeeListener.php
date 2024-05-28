@@ -17,17 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $id_emp = $_POST['employee_id'];
             $stmt = $db->prepare("DELETE FROM employee where employee_id = ?");
             $stmt->execute([$id_emp]);
-            $sth = $db->prepare("SELECT * FROM employee");
-            $sth->execute();
-            $employee = $sth->fetchAll();
-            $countId = count($employee);
-            $indexU = 0;
-            for ($i = 1; $i <= $countId; $i++) {
-                $tempU = intval($employee[$indexU]['employee_id']);
-                $stmt = $db->prepare("UPDATE employee SET employee_id = ? where employee_id = $tempU");
-                $stmt->execute([$i]);
-                $indexU++;
-            }
         }
         catch(PDOException $e){
             print('Error : ' . $e->getMessage());
