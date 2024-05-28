@@ -44,7 +44,7 @@
       $sth->execute();
       $department = $sth->fetchAll();
       ?>
-      <select name="department" multiple="false" <?php if ($errors['department']) {print 'class="error"';} ?> >
+      <select name="department"  <?php if ($errors['department']) {print 'class="error"';} ?> >
       <?php
       foreach($department as $dept){
         printf('
