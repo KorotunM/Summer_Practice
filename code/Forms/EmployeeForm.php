@@ -51,7 +51,7 @@
         $index++;
         printf('
           <option %s value = "%d" >%s</option>'
-          , $dept['departnment_name'] == $values['department'] ?  'selected' : '', $index, $dept['department_name']
+          , $dept['department_name'] == $values['department'] ?  'selected' : '', $index, $dept['department_name']
         );
       }
       ?>

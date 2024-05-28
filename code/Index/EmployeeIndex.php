@@ -75,7 +75,7 @@ else {
  }
  setcookie('position_value', $_POST['position'], time() + 12 * 30 * 24 * 60 * 60);
 
- if (empty($_POST['departnment'])) {
+ if (empty($_POST['department'])) {
    setcookie('department_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
