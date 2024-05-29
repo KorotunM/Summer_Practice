@@ -6,7 +6,7 @@
         print('<div class="message">Изменение произошло успешно</div><br>');
     }
     foreach($_COOKIE as $key => $value) {
-        setcookie($key, '', 100000);
+        setcookie($key, '', 100000, '/');
     }
     setcookie('id_value','', 100000, '/');
 ?>
