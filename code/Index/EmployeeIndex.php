@@ -42,6 +42,10 @@ if($errors['department']){
   $values['position'] = empty($_COOKIE['position_value_' . $_COOKIE['id_value']]) ? '' : strip_tags($_COOKIE['position_value_' . $_COOKIE['id_value']]);
   $values['department'] = empty($_COOKIE['department_value']) ? '' : (strip_tags($_COOKIE['department_value']));
   include('../Forms/EmployeeForm.php');
+
+  if (!empty($_COOKIE['id_value'])) {
+    setcookie('id_value', '', time() - 3600);
+}
 }
 else {
   include('../password.php');
