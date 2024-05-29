@@ -20,10 +20,11 @@
         setcookie('save', '', 100000);
         print('<div class="message">Изменение произошло успешно</div><br>');
     }
-    foreach($_COOKIE as $key => $value) {
-        setcookie($key, '', 100000);
-        print('удалена' . $key);
-    }
+    // foreach($_COOKIE as $key => $value) {
+    //     setcookie($key, '', 100000);
+    //     print('удалена' . $key);
+    // }
+    setcookie('id_value', '', 100000);
 ?>
 
 <?php 
