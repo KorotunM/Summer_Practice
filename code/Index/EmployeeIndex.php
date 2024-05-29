@@ -1,4 +1,5 @@
 <?php
+setcookie('id_value', '', time() - 3600);
 header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
