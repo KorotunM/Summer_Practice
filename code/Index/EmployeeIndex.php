@@ -89,7 +89,7 @@ else {
   }
   foreach($_COOKIE as $key => $value) {
     setcookie($key, '', 100000);
-}
+ }
   if (!empty($_COOKIE['id_value'])) {
     $department_id = $_POST['department'];
     try {
@@ -99,9 +99,6 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    foreach($_COOKIE as $key => $value) {
-      setcookie($key, '', 100000, '/');
-  }
     setcookie('id_value','', 10000,'/');
 } else {
     $department_id = $_POST['department'];
