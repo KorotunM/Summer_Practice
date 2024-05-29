@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['email'] = !empty($_COOKIE['email_error']);
   $errors['position'] = !empty($_COOKIE['position_error']);
   $errors['department'] = !empty($_COOKIE['department_error']);
-  setcookie('id_value', '', time() - 3600);
+
  if ($errors['fio']) {
   setcookie('fio_error', '', 100000);
   setcookie('fio_value','',100000);
@@ -36,19 +36,14 @@ if($errors['department']){
 }
 
   $values = array();
-  $values['fio'] = empty($_COOKIE['fio_value_' . $_COOKIE['id_value']]) ? '' : strip_tags($_COOKIE['fio_value_' . $_COOKIE['id_value']]);
+  $values['fio'] = empty($_COOKIE['fio_value']) ? '' : strip_tags($_COOKIE['fio_value']);
   $values['tel'] = empty($_COOKIE['tel_value']) ? '' : strip_tags($_COOKIE['tel_value']);
   $values['email'] = empty($_COOKIE['email_value']) ? '' : strip_tags($_COOKIE['email_value']);
-  $values['position'] = empty($_COOKIE['position_value_' . $_COOKIE['id_value']]) ? '' : strip_tags($_COOKIE['position_value_' . $_COOKIE['id_value']]);
+  $values['position'] = empty($_COOKIE['position_value']) ? '' : strip_tags($_COOKIE['position_value']);
   $values['department'] = empty($_COOKIE['department_value']) ? '' : (strip_tags($_COOKIE['department_value']));
   include('../Forms/EmployeeForm.php');
-
-  if (!empty($_COOKIE['id_value'])) {
-    setcookie('id_value', '', time() - 3600);
-}
 }
 else {
-  setcookie('id_value', '', time() - 3600);
   include('../password.php');
  $errors = FALSE;
  if (empty($_POST['fio']) || !preg_match('/^[а-яА-ЯёЁa-zA-Z\s-]{1,150}$/u', $_POST['fio'])) {
@@ -101,10 +96,6 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    setcookie('id_value', '', 100000);
-    foreach (['fio', 'tel', 'email', 'position', 'department'] as $field) {
-      setcookie($field . '_value_' . $_COOKIE['id_value'], '', 100000);
-  }
 } else {
     $department_id = $_POST['department'];
     try {
@@ -115,7 +106,6 @@ else {
         exit();
     }
 }
-setcookie('save', '1');
 header('Location: ../Tables/EmployeeTable.php');
 
 }

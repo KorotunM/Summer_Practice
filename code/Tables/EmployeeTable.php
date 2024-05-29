@@ -1,3 +1,16 @@
+
+
+<?php
+    if (!empty($_COOKIE['save'])) {
+        setcookie('save', '', 100000);
+        print('<div class="message">Изменение произошло успешно</div><br>');
+    }
+    foreach($_COOKIE as $key => $value) {
+        setcookie($key, '', 100000);
+    }
+    setcookie('id_value','', 100000, '/');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +27,6 @@
     <li><a href="EmployeeTable.php">Журнал расхода канцтоваров</a></li>
     <li><a href="OfficeLogTable.php">Список канцтоваров</a></li>
 </ul>
-
-<?php
-    if (!empty($_COOKIE['save'])) {
-        setcookie('save', '', 100000);
-        print('<div class="message">Изменение произошло успешно</div><br>');
-    }
-    // foreach($_COOKIE as $key => $value) {
-    //     setcookie($key, '', 100000);
-    //     print('удалена' . $key);
-    // }
-    setcookie('id_value', '', 100000, '/');
-?>
 
 <?php 
 include('../password.php');
