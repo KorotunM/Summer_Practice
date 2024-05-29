@@ -107,6 +107,7 @@ else {
         exit();
     }
 }
+setcookie('save', '1');
 header('Location: ../Tables/EmployeeTable.php');
 
 }
