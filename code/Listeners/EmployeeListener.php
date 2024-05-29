@@ -3,6 +3,7 @@ header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_COOKIE['id_value'])) {
     include('../password.php');
     if (isset($_POST['change'])) {
+        setcookie('id_value', '', time() - 3600);
         setcookie('id_value', $_POST['employee_id'], time() + 24 * 60 * 60, '/');
         setcookie('departmentid_value',$_POST['department_id'], time() + 24 * 60 * 60);
         setcookie('fio_value_' . $_COOKIE['id_value'], $_POST['fio'], time() + 12 * 30 * 24 * 60 * 60);
