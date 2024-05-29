@@ -1,4 +1,12 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Летняя практика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
 <?php
     if (!empty($_COOKIE['save'])) {
@@ -9,16 +17,6 @@
         setcookie($key, '', 100000);
     }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Летняя практика</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
 <ul>
     <li><a href="CostTable.php">Список затрат</a></li>
