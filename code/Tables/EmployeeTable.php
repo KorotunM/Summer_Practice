@@ -24,7 +24,7 @@
     //     setcookie($key, '', 100000);
     //     print('удалена' . $key);
     // }
-    setcookie('id_value', '', 100000);
+    setcookie('id_value', '', 100000, '/');
 ?>
 
 <?php 
