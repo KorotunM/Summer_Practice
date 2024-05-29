@@ -50,31 +50,31 @@ else {
    setcookie('fio_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
- setcookie('fio_value', $_POST['fio'], time() + 12 * 30 * 24 * 60 * 60);
+ setcookie('fio_value', $_POST['fio'], time() + 12 * 30 * 24 * 60 * 60, '/');
  
  if (empty($_POST['tel']) || !preg_match('/^\+[0-9]{11}$/', $_POST['tel'])) {
    setcookie('tel_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
- setcookie('tel_value', $_POST['tel'], time() + 12 * 30 * 24 * 60 * 60);
+ setcookie('tel_value', $_POST['tel'], time() + 12 * 30 * 24 * 60 * 60, '/');
  
  if (empty ($_POST['email']) || !preg_match('/^([a-z0-9_-]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i', $_POST['email'])) {
    setcookie('email_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
- setcookie('email_value', $_POST['email'], time() + 12 * 30 * 24 * 60 * 60);
+ setcookie('email_value', $_POST['email'], time() + 12 * 30 * 24 * 60 * 60, '/');
 
  if (empty ($_POST['position']) || !preg_match('/^[a-zA-Zа-яА-Я]+$/', $_POST['position'])) {
     setcookie('position_error','1',time() + 24 * 60 * 60);
     $errors = TRUE;
  }
- setcookie('position_value', $_POST['position'], time() + 12 * 30 * 24 * 60 * 60);
+ setcookie('position_value', $_POST['position'], time() + 12 * 30 * 24 * 60 * 60, '/');
 
  if (empty($_POST['department'])) {
    setcookie('department_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
- setcookie('department_value', $_POST['department'], time() + 12 * 30 * 24 * 60 * 60);
+ setcookie('department_value', $_POST['department'], time() + 12 * 30 * 24 * 60 * 60, '/');
 
   if ($errors) {
     header('Location: EmployeeIndex.php');
