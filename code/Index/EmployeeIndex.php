@@ -96,6 +96,7 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
+    setcookie('id_value', '', 100000);
 } else {
     $department_id = $_POST['department'];
     try {
