@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_COOKIE['id_value'])) {
     include('../password.php');
     if (isset($_POST['change'])) {
         if (isset($_COOKIE['id_value'])) {
