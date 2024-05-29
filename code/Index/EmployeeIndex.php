@@ -2,11 +2,6 @@
 header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
-  if (!empty($_COOKIE['save'])) {
-    setcookie('save', '', 100000);
-    $messages[] = 'Спасибо, результаты сохранены.';
-  }
-
   $errors = array();
   $errors['fio'] = !empty($_COOKIE['fio_error']);
   $errors['tel'] = !empty($_COOKIE['tel_error']);
