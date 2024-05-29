@@ -22,6 +22,7 @@
     }
     foreach($_COOKIE as $key => $value) {
         setcookie($key, '', 100000);
+        print('удалена' . $key);
     }
 ?>
 
