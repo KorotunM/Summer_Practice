@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<ul>
+    <li><a href="CostTable.php">Список затрат</a></li>
+    <li><a href="DepartmentTable.php">Список Сотрудников</a></li>
+    <li><a href="EmployeeTable.php">Журнал расхода канцтоваров</a></li>
+    <li><a href="OfficeLogTable.php">Список канцтоваров</a></li>
+</ul>
+
 <?php
     if (!empty($_COOKIE['save'])) {
         setcookie('save', '', 100000);
@@ -17,13 +24,6 @@
         setcookie($key, '', 100000);
     }
 ?>
-
-<ul>
-    <li><a href="CostTable.php">Список затрат</a></li>
-    <li><a href="DepartmentTable.php">Список Сотрудников</a></li>
-    <li><a href="EmployeeTable.php">Журнал расхода канцтоваров</a></li>
-    <li><a href="OfficeLogTable.php">Список канцтоваров</a></li>
-</ul>
 
 <?php 
 include('../password.php');

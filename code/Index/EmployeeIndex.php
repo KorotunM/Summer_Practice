@@ -96,7 +96,10 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    setcookie('id_value', '', 100000);
+  //   setcookie('id_value', '', 100000);
+  //   foreach (['fio', 'tel', 'email', 'position', 'department'] as $field) {
+  //     setcookie($field . '_value_' . $_COOKIE['id_value'], '', 100000);
+  // }
 } else {
     $department_id = $_POST['department'];
     try {
