@@ -1,5 +1,4 @@
 <?php
-setcookie('id_value', '', time() - 3600);
 header('Content-Type: text/html; charset=UTF-8');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
@@ -9,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['email'] = !empty($_COOKIE['email_error']);
   $errors['position'] = !empty($_COOKIE['position_error']);
   $errors['department'] = !empty($_COOKIE['department_error']);
-
+  setcookie('id_value', '', time() - 3600);
  if ($errors['fio']) {
   setcookie('fio_error', '', 100000);
   setcookie('fio_value','',100000);
@@ -49,6 +48,7 @@ if($errors['department']){
 }
 }
 else {
+  setcookie('id_value', '', time() - 3600);
   include('../password.php');
  $errors = FALSE;
  if (empty($_POST['fio']) || !preg_match('/^[а-яА-ЯёЁa-zA-Z\s-]{1,150}$/u', $_POST['fio'])) {
