@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $item_id = $_POST['item'];
         try {
             $stmt = $db->prepare("UPDATE office_log SET item_id = ?, employee_id = ?, quantity = ?, purpose = ? WHERE id = ?");
-            $stmt->execute([$employee_id, $item_id, $_POST['quantity'], $_POST['purpose'], $_COOKIE['id_value']]);
+            $stmt->execute([$item_id, $employee_id, $_POST['quantity'], $_POST['purpose'], $_COOKIE['id_value']]);
         } catch (PDOException $ex) {
             print ('Error : ' . $ex->getMessage());
             exit();
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $item_id = $_POST['item'];
         try {
             $stmt = $db->prepare("INSERT INTO employee (item_id, employee_id, quantity, purpose) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$employee_id, $item_id, $_POST['quantity'], $_POST['purpose']]);
+            $stmt->execute([$item_id, $employee_id, $_POST['quantity'], $_POST['purpose']]);
         } catch (PDOException $ex) {
             print ('Error : ' . $ex->getMessage());
             exit();
