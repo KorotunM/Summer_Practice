@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
     setcookie('quantity_value', $_POST['quantity'], time() + 12 * 30 * 24 * 60 * 60);
 
-    $pattern = '/^[\p{Cyrillic}A-Za-z0-9.,.,\-]+$/u';
+    $pattern = '/^[\p{Cyrillic}A-Za-z0-9.,.,\s\-]+$/u';
     if (empty($_POST['purpose']) || !preg_match($pattern, $_POST['purpose'])) {
         setcookie('purpose_error', '1', time() + 24 * 60 * 60);
         $errors = TRUE;
