@@ -21,7 +21,7 @@
       </h5>Введите ФИО рукводитеоя: </h5><br />
       <input name = "fio" type = "text" <?php if($errors['fio']){print 'class="error"';} ?> value = "<?php print $values['fio']?>" placeholder="ФИО" />
     </label>
-    <?php if($errors['position']) {print($messages['position']); print('<br>');} ?>
+    <?php if($errors['fio']) {print($messages['fio']); print('<br>');} ?>
     
     <label>
       </h5>Введите адрес расположения департамента: </h5><br />
