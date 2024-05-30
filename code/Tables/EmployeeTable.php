@@ -51,7 +51,7 @@ $employee = $sth->fetchAll();
       $sth = $db->prepare("SELECT*FROM department");
       $sth->execute();
       $dept = $sth->fetchAll();
-      foreach($dept as $d){if($emp['department_id'] == $d['department_id']) $department_name = $d['$department_name']; break;}
+      foreach($dept as $d){if($emp['department_id'] == $d['department_id']) $department_name = $d['department_name']; break;}
       printf('
       <tr>
       <td>%d</td>
@@ -63,7 +63,7 @@ $employee = $sth->fetchAll();
       <td class="action">
         <form class = "actionform" action="../Listeners/EmployeeListener.php" method="POST">
           <input type="hidden" name="employee_id" value= %d >
-          <input type="hidden" name="department_id" value= "%s" >
+          <input type="hidden" name="department_name" value= "%s" >
           <input type="hidden" name="fio" value="%s">
           <input type="hidden" name="tel" value="%s">
           <input type="hidden" name="email" value="%s">
