@@ -39,7 +39,7 @@
       <h5> Выберите департамент cотрудника: </h5>
       <?php
       include('../password.php');
-      $sth=$db->prepare("SELECT DISTINCT department_name FROM department");
+      $sth=$db->prepare("SELECT DISTINCT department_name, department_id FROM department");
       $sth->execute();
       $department = $sth->fetchAll();
       ?>
