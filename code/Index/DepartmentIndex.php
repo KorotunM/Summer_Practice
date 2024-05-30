@@ -72,7 +72,7 @@ else {
 
   if (!empty($_COOKIE['id_value'])) {
     try {
-        $stmt = $db->prepare("UPDATE department SET fio = ?, adres = ?, department_name = ? WHERE department_id = ?");
+        $stmt = $db->prepare("UPDATE department SET manager_name = ?, adres = ?, department_name = ? WHERE department_id = ?");
         $stmt->execute([$_POST['fio'], $_POST['adres'], $_POST['department'], $_COOKIE['id_value']]);
     } catch (PDOException $ex) {
         print('Error : ' . $ex->getMessage());
