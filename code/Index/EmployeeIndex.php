@@ -40,7 +40,7 @@ if($errors['department']){
   $values['tel'] = empty($_COOKIE['tel_value']) ? '' : strip_tags($_COOKIE['tel_value']);
   $values['email'] = empty($_COOKIE['email_value']) ? '' : strip_tags($_COOKIE['email_value']);
   $values['position'] = empty($_COOKIE['position_value']) ? '' : strip_tags($_COOKIE['position_value']);
-  $values['department'] = empty($_COOKIE['department_value']) ? '' : (strip_tags($_COOKIE['department_value']));
+  $values['department'] = empty($_COOKIE['department_value']) ? '' : ($_COOKIE['department_value']);
   include('../Forms/EmployeeForm.php');
 }
 else {
