@@ -45,12 +45,10 @@
       ?>
       <select name="department"  <?php if ($errors['department']) {print 'class="error"';} ?> >
       <?php
-      $index = 0;
       foreach($department as $dept){
-        $index++;
         printf('
           <option %s value = "%d" >%s</option>'
-          , $dept['department_name'] == $values['department'] ?  'selected' : '', $index, $dept['department_name']
+          , $dept['department_name'] == $values['department'] ?  'selected' : '', $dept['department_id'], $dept['department_name']
         );
       }
       ?>
