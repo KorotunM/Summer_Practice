@@ -68,7 +68,7 @@ else {
  }
  setcookie('email_value', $_POST['email'], time() + 12 * 30 * 24 * 60 * 60);
 
- if (empty ($_POST['position']) || !preg_match('/^[a-zA-Zа-яА-Я]+$/', $_POST['position'])) {
+ if (empty ($_POST['position']) || !preg_match('/^[a-zA-Zа-яА-Я]+$/u', $_POST['position'])) {
     setcookie('position_error','1',time() + 24 * 60 * 60);
     $errors = TRUE;
  }

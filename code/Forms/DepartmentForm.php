@@ -18,7 +18,7 @@
     <?php if ($errors['department']) {print($messages['department']); print('<br>');}?>
 
     <label>
-      </h5>Введите ФИО рукводитеоя: </h5><br />
+      </h5>Введите ФИО рукводителя: </h5><br />
       <input name = "fio" type = "text" <?php if($errors['fio']){print 'class="error"';} ?> value = "<?php print $values['fio']?>" placeholder="ФИО" />
     </label><br />
     <?php if($errors['fio']) {print($messages['fio']); print('<br>');} ?>
