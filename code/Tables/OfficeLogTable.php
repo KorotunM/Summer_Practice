@@ -73,7 +73,7 @@ setcookie('id_value', '', 100000, '/');
       <td>%d</td>
       <td>%s</td>
       <td class="action">
-        <form class = "actionform" action="../Listeners/EmployeeListener.php" method="POST">
+        <form class = "actionform" action="../Listeners/OfficeLogListener.php" method="POST">
           <input type="hidden" name="id" value= %d >
           <input type="hidden" name="item" value= "%s" >
           <input type="hidden" name="employee" value="%s">
