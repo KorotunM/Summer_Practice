@@ -25,7 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $messages['adres'] = '<div class="error"> Заполните адрес, доступные символы: прописные и строчные буквы, цифры, пробел, ",", ".", "-" </div>';
   }
 
-
+  foreach($_COOKIE as $key => $value) {
+    setcookie($key, '', 100000);
+  }
+  
   $values = array();
   $values['department'] = empty($_COOKIE['department_value']) ? '' : (strip_tags($_COOKIE['department_value']));
   $values['fio'] = empty($_COOKIE['fio_value']) ? '' : strip_tags($_COOKIE['fio_value']);
@@ -78,9 +81,6 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    foreach($_COOKIE as $key => $value) {
-        setcookie($key, '', 100000);
-      }
     setcookie('id_value','', 10000,'/');
 } else {
     try {
@@ -90,9 +90,6 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    foreach($_COOKIE as $key => $value) {
-        setcookie($key, '', 100000);
-      }
 }
 setcookie('save','1');
 header('Location: ../Tables/DepartmentTable.php');

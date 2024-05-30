@@ -35,6 +35,10 @@ if($errors['department']){
   $messages['department'] = '<div class="error"> Выберите департамент </div>';
 }
 
+foreach($_COOKIE as $key => $value) {
+  setcookie($key, '', 100000);
+}
+
   $values = array();
   $values['fio'] = empty($_COOKIE['fio_value']) ? '' : strip_tags($_COOKIE['fio_value']);
   $values['tel'] = empty($_COOKIE['tel_value']) ? '' : strip_tags($_COOKIE['tel_value']);
@@ -99,9 +103,6 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
-    foreach($_COOKIE as $key => $value) {
-      setcookie($key, '', 100000);
-    }
     setcookie('id_value','', 10000,'/');
 } else {
     $department_id = $_POST['department'];
@@ -111,9 +112,6 @@ else {
     } catch (PDOException $ex) {
         print('Error : ' . $ex->getMessage());
         exit();
-    }
-    foreach($_COOKIE as $key => $value) {
-      setcookie($key, '', 100000);
     }
 }
 setcookie('save','1');
