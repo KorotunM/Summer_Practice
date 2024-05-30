@@ -34,8 +34,8 @@
                 ?>
             </select>
         </label><br />
-        <?php if ($errors['department']) {
-            print ($messages['department']);
+        <?php if ($errors['employee']) {
+            print ($messages['employee']);
             print ('<br>');
         } ?>
 
