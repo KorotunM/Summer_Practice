@@ -65,7 +65,7 @@ $employee = $sth->fetchAll();
       <td class="action">
         <form class = "actionform" action="../Listeners/EmployeeListener.php" method="POST">
           <input type="hidden" name="employee_id" value= %d >
-          <input type="hidden" name="department_name" value= %s >
+          <input type="hidden" name="department_name" value= "%s" >
           <input type="hidden" name="fio" value="%s">
           <input type="hidden" name="tel" value="%s">
           <input type="hidden" name="email" value="%s">
