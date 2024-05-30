@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include('../password.php');
     if (isset($_POST['change'])) {
         setcookie('id_value', $_POST['employee_id'], time() + 24 * 60 * 60, '/');
-        setcookie('department_value',$_POST['department_name'], time() + 24 * 60 * 60, '/');
+        setcookie('department_value',$_POST['department_name'], time() + 24 * 60 * 60);
         print($_POST['department_name']);
         print($_COOKIE['department_value']);
         setcookie('fio_value',$_POST['fio'], time() + 24 * 60 * 60, '/');
