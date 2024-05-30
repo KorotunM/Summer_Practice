@@ -13,7 +13,7 @@
     <h2>Форма Департамента</h2>
     <label>
       <h5>Введите название департамента:</h5><br />
-      <input name="department" type = "text" <?php if ($errors['department']) {print 'class="error"';} ?> value="<?php print $values['department']; ?>" placeholder="Навзвание" />
+      <input name="department" type = "text" <?php if ($errors['department']) {print 'class="error"';} ?> value="<?php print $values['department']; ?>" placeholder="Название" />
     </label><br />
     <?php if ($errors['department']) {print($messages['department']); print('<br>');}?>
 

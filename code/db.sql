@@ -18,9 +18,8 @@ CREATE TABLE office_log (
     id int(10) AUTO_INCREMENT,
     item_id int(10) NOT NULL,
     employee_id int(10) NOT NULL,
-    item_name VARCHAR(255) NOT NULL,
     quantity int(10) NOT NULL,
-    expense_date DATE NOT NULL,
+    purpose VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
 CREATE TABLE department (
@@ -40,3 +39,13 @@ INSERT INTO department (department_name, manager_name, adres)
 VALUES ('IT', 'John Smith', '123 Main St');
 INSERT INTO department (department_name, manager_name, adres)
 VALUES ('HR', 'Jane Doe', '456 Elm St');
+
+INSERT INTO cost (item_name, item_type, price_per_unit)
+VALUES ('Paper', 'Stationery', 1.50);
+INSERT INTO cost (item_name, item_type, price_per_unit)
+VALUES ('Pens', 'Stationery', 0.75);
+
+INSERT INTO office_log (item_id, employee_id, quantity, purpose)
+VALUES (2, 18, 10, 'Распечатка документов');
+INSERT INTO office_log (item_id, employee_id, quantity, purpose)
+VALUES (3, 25, 5, 'Записи в блокноте');

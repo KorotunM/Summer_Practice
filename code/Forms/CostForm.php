@@ -16,7 +16,7 @@
             <input name="item" type="text" <?php if ($errors['item']) {
                 print 'class="error"';
             } ?>
-                value="<?php print $values['item']; ?>" placeholder="Навзвание" />
+                value="<?php print $values['item']; ?>" placeholder="Название" />
         </label><br />
         <?php if ($errors['item']) {
             print ($messages['item']);
