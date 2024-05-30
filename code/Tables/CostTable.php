@@ -32,7 +32,7 @@ setcookie('id_value', '', 100000, '/');
     include ('../password.php');
     $sth = $db->prepare("SELECT*FROM cost");
     $sth->execute();
-    $department = $sth->fetchAll();
+    $cost = $sth->fetchAll();
     ?>
 
     <h2>Таблица затрат по Канцтоварам</h2>
