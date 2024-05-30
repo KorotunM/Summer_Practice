@@ -39,20 +39,20 @@ else {
   include('../password.php');
  $errors = FALSE;
 
- $patternDep = '/^[\p{Cyrillic}A-Za-z0-9\s]+$/u';
- if (empty($_POST['item']) || !preg_match($patternDep, $_POST['item'])) {
+ $patternI = '/^[\p{Cyrillic}A-Za-z0-9\s]+$/u';
+ if (empty($_POST['item']) || !preg_match($patternI, $_POST['item'])) {
     setcookie('item_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
   setcookie('item_value', $_POST['item'], time() + 12 * 30 * 24 * 60 * 60);
 
- if (empty($_POST['type']) || !preg_match('/^[а-яА-ЯёЁa-zA-Z\s-]{1,150}$/u', $_POST['type'])) {
+ if (empty($_POST['type'])) {
    setcookie('type_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
  setcookie('type_value', $_POST['type'], time() + 12 * 30 * 24 * 60 * 60);
 
- $pattern = '/^[0-9\p{Cyrillic}A-Za-z,\s.\-]+$/u';
+ $pattern = '/^[0-9]+([.,][0-9]{1,2})?$/';
  if (empty($_POST['price']) || !preg_match($pattern, $_POST['price'])) {
     setcookie('price_error','1',time() + 24 * 60 * 60);
     $errors = TRUE;
