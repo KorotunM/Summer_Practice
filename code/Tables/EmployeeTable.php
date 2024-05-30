@@ -23,9 +23,9 @@
 
 <ul>
     <li><a href="CostTable.php">Список затрат</a></li>
-    <li><a href="DepartmentTable.php">Список Сотрудников</a></li>
-    <li><a href="EmployeeTable.php">Журнал расхода канцтоваров</a></li>
-    <li><a href="OfficeLogTable.php">Список канцтоваров</a></li>
+    <li><a href="DepartmentTable.php">Список департаментов</a></li>
+    <li><a href="EmployeeTable.php">Список Сотрудников</a></li>
+    <li><a href="OfficeLogTable.php">Журнал расхода канцтоваров</a></li>
 </ul>
 
 <?php 
@@ -39,7 +39,7 @@ $employee = $sth->fetchAll();
 <table class="employee">
   <tr>
     <th>ID_Сотрудника</th>
-    <th>ID_Департамаента</th>
+    <th>Название_Департамаента</th>
     <th>ФИО</th>
     <th>Телефон</th>
     <th>Email</th>

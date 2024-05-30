@@ -27,6 +27,7 @@ CREATE TABLE department (
     department_id int(10) NOT NULL AUTO_INCREMENT,
     department_name VARCHAR(255) NOT NULL,
     manager_name VARCHAR(255) NOT NULL,
+    adres VARCHAR(255) NOT NULL,
     PRIMARY KEY(department_id)
 );
 
@@ -35,7 +36,7 @@ VALUES ('1', 'Иванов Иван Иванович', '+79001234567', 'ivanov@e
 INSERT INTO employee (department_id, fio, tel, email, position)
 VALUES ('2', 'Петрова Елена Сергеевна', '+79019876543', 'petrova@example.com', 'Разработчик');
 
-INSERT INTO department (department_name, manager_name)
-VALUES ('Отдел продаж', 'Иванов Иван Иванович');
-INSERT INTO department (department_name, manager_name)
-VALUES ('Отдел разработки', 'Петрова Елена Сергеевна');
+INSERT INTO department (department_name, manager_name, adres)
+VALUES ('IT', 'John Smith', '123 Main St');
+INSERT INTO department (department_name, manager_name, adres)
+VALUES ('HR', 'Jane Doe', '456 Elm St');
