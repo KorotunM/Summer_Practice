@@ -58,7 +58,7 @@ $employee = $sth->fetchAll();
       printf('
       <tr>
       <td>%d</td>
-      <td>%d</td>
+      <td>%s</td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
