@@ -63,14 +63,14 @@ setcookie('id_value', '', 100000, '/');
         </form>
       </td>
       </tr>',
-                $dept['item_id'],
-                $dept['item_name'],
-                $dept['item_type'],
-                $dept['price_per_unit'],
-                $dept['item_id'],
-                $dept['item_name'],
-                $dept['item_type'],
-                $dept['price_per_unit']
+                $c['item_id'],
+                $c['item_name'],
+                $c['item_type'],
+                $c['price_per_unit'],
+                $c['item_id'],
+                $c['item_name'],
+                $c['item_type'],
+                $c['price_per_unit']
             );
         }
         ?>
