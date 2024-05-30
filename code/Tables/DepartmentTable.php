@@ -1,52 +1,52 @@
-
-
 <?php
-    if (!empty($_COOKIE['save'])) {
-        setcookie('save', '', 100000);
-        print('<div class="message">Изменение произошло успешно</div><br>');
-    }
-    foreach($_COOKIE as $key => $value) {
-        setcookie($key, '', 100000, '/');
-    }
-    setcookie('id_value','', 100000, '/');
+if (!empty($_COOKIE['save'])) {
+    setcookie('save', '', 100000);
+    print ('<div class="message">Изменение произошло успешно</div><br>');
+}
+foreach ($_COOKIE as $key => $value) {
+    setcookie($key, '', 100000, '/');
+}
+setcookie('id_value', '', 100000, '/');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Летняя практика</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<ul>
-    <li><a href="CostTable.php">Список затрат</a></li>
-    <li><a href="DepartmentTable.php">Список департаментов</a></li>
-    <li><a href="EmployeeTable.php">Список Сотрудников</a></li>
-    <li><a href="OfficeLogTable.php">Журнал расхода канцтоваров</a></li>
-</ul>
+    <ul>
+        <li><a href="CostTable.php">Список затрат</a></li>
+        <li><a href="DepartmentTable.php">Список департаментов</a></li>
+        <li><a href="EmployeeTable.php">Список Сотрудников</a></li>
+        <li><a href="OfficeLogTable.php">Журнал расхода канцтоваров</a></li>
+    </ul>
 
-<?php 
-include('../password.php');
-$sth = $db->prepare("SELECT*FROM department");
-$sth->execute();
-$department = $sth->fetchAll();
-?>
+    <?php
+    include ('../password.php');
+    $sth = $db->prepare("SELECT*FROM department");
+    $sth->execute();
+    $department = $sth->fetchAll();
+    ?>
 
-<h2>Таблица Департаментов</h2>
-<table class="tableD">
-  <tr>
-    <th>ID_Департамаента</th>
-    <th>Название Департамента</th>
-    <th>ФИО Руководителя</th>
-    <th>Адрес</th>
-    <th class="action"></th>
-  </tr>
-  <?php
-    foreach($department as $dept) {
-      printf('
+    <h2>Таблица Департаментов</h2>
+    <table class="tableD">
+        <tr>
+            <th>ID_Департамаента</th>
+            <th>Название Департамента</th>
+            <th>ФИО Руководителя</th>
+            <th>Адрес</th>
+            <th class="action"></th>
+        </tr>
+        <?php
+        foreach ($department as $dept) {
+            printf('
       <tr>
       <td>%d</td>
       <td>%s</td>
@@ -63,15 +63,21 @@ $department = $sth->fetchAll();
         </form>
       </td>
       </tr>',
-      $dept['department_id'], $dept['department_name'], $dept['manager_name'], $dept['adres'],
-      $dept['department_id'], $dept['department_name'], $dept['manager_name'], $dept['adres']);
-    }
-  ?>
-</table>
-<form action="../Index/DepartmentIndex.php" method="GET">
-<input class = "AddBut" type="submit" value="Добавить" />
-</form>
+                $dept['department_id'],
+                $dept['department_name'],
+                $dept['manager_name'],
+                $dept['adres'],
+                $dept['department_id'],
+                $dept['department_name'],
+                $dept['manager_name'],
+                $dept['adres']
+            );
+        }
+        ?>
+    </table>
+    <form action="../Index/DepartmentIndex.php" method="GET">
+        <input class="AddBut" type="submit" value="Добавить" />
+    </form>
 </body>
+
 </html>
-
-

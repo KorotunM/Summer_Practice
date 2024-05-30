@@ -1,7 +1,7 @@
 CREATE TABLE cost (
     item_id int(10) NOT NULL AUTO_INCREMENT,
     item_name VARCHAR(255) NOT NULL,
-    item_type VARCHAR(10) NOT NULL,
+    item_type VARCHAR(10) NOT NULL CHECK (item_type REGEXP '^(кг|шт|гр)$'),
     price_per_unit DECIMAL(10,2) NOT NULL,
     PRIMARY KEY(item_id)
 );
@@ -15,9 +15,9 @@ CREATE TABLE employee (
     PRIMARY KEY(employee_id)
 );
 CREATE TABLE office_log (
-    id int(10) AUTO_INCREMENT PRIMARY KEY,
+    id int(10) AUTO_INCREMENT,
     item_id int(10) NOT NULL,
-    emp_change_id VARCHAR(255) NOT NULL,
+    employee_id int(10) NOT NULL,
     item_name VARCHAR(255) NOT NULL,
     quantity int(10) NOT NULL,
     expense_date DATE NOT NULL,
