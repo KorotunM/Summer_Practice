@@ -74,7 +74,7 @@ else {
    setcookie('department_error', '1', time() + 24 * 60 * 60);
    $errors = TRUE;
  }
- setcookie('department_value', $_POST['department'], time() + 12 * 30 * 24 * 60 * 60);
+ //setcookie('department_value', $_POST['department'], time() + 12 * 30 * 24 * 60 * 60);
 
   if ($errors) {
     header('Location: EmployeeIndex.php');
