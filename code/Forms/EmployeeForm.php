@@ -13,7 +13,7 @@
     <h2>Форма Сотрудника</h2>
     <label>
       <h5>Введите ваше ФИО:</h5><br />
-      <input name="fio" type = "text" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" placeholder="ФИО" />
+      <input name="fio" type="text" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" placeholder="ФИО" />
     </label><br />
     <?php if ($errors['fio']) {print($messages['fio']); print('<br>');}?>
 
@@ -31,32 +31,32 @@
 
     <label>
       </h5>Введите занимаемую, должность: </h5><br />
-      <input name = "position" type = "text" <?php if($errors['position']){print 'class="error"';} ?> value = "<?php print $values['position']?>" placeholder="должность" />
+      <input name="position" type="text" <?php if ($errors['position']) {print 'class="error"';} ?> value="<?php print $values['position']; ?>" placeholder="должность" />
     </label>
-    <?php if($errors['position']) {print($messages['position']); print('<br>');} ?>
+    <?php if ($errors['position']) {print($messages['position']); print('<br>');} ?>
 
     <label>
-      <h5> Выберите департамент cотрудника: </h5>
+      <h5>Выберите департамент сотрудника:</h5>
       <?php
       include('../password.php');
-      $sth=$db->prepare("SELECT DISTINCT department_name, department_id FROM department");
+      $sth = $db->prepare("SELECT DISTINCT department_name, department_id FROM department");
       $sth->execute();
       $department = $sth->fetchAll();
       ?>
-      <select name="department"  <?php if ($errors['department']) {print 'class="error"';} ?> >
+      <select name="department" <?php if ($errors['department']) {print 'class="error"';} ?>>
       <?php
-      foreach($department as $dept){
+      foreach ($department as $dept) {
         printf('
-          <option %s value = "%d" >%s</option>'
-          , $dept['department_name'] == $values['department'] ?  'selected' : '', $dept['department_id'], $dept['department_name']
+          <option %s value="%d">%s</option>',
+          $dept['department_id'] == $values['department'] ? 'selected' : '', $dept['department_id'], $dept['department_name']
         );
       }
       ?>
       </select>
-      <?php print($values['department']); if ($errors['department']) {print($messages['department']); print('<br>');}?>
+      <?php if ($errors['department']) {print($messages['department']); print('<br>');} ?>
     </label>
 
-    <input class = "SaveBut" type="submit" value="Сохранить" />
+    <input class="SaveBut" type="submit" value="Сохранить" />
   </form>
 </body>
 
