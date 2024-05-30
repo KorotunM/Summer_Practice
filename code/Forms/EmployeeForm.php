@@ -55,7 +55,7 @@
       }
       ?>
       </select>
-      <?php if ($errors['department']) {print($messages['department']); print('<br>');}?>
+      <?php print($values['department']); if ($errors['department']) {print($messages['department']); print('<br>');}?>
     </label>
 
     <input class = "SaveBut" type="submit" value="Сохранить" />
