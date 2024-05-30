@@ -49,8 +49,8 @@ else {
  }
  setcookie('fio_value', $_POST['fio'], time() + 12 * 30 * 24 * 60 * 60);
 
- $pattern = '/^[\p{Cyrillic}A-Za-z0-9,\s.\-\s]*[\p{Cyrillic}A-Za-z0-9,\s.\-]+[\p{Cyrillic}A-Za-z0-9,\s.\-\s]*$/u';
-if (preg_match($pattern, $_POST['adres'])) {
+ $pattern = '/^[0-9\p{Cyrillic}A-Za-z,\s.\-]+$/u';
+ if (preg_match($pattern, $_POST['adres'])) {
     setcookie('adres_error','1',time() + 24 * 60 * 60);
     $errors = TRUE;
 }
