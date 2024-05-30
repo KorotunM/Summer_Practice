@@ -20,13 +20,13 @@
     <label>
       </h5>Введите ФИО рукводитеоя: </h5><br />
       <input name = "fio" type = "text" <?php if($errors['fio']){print 'class="error"';} ?> value = "<?php print $values['fio']?>" placeholder="ФИО" />
-    </label>
+    </label><br />
     <?php if($errors['fio']) {print($messages['fio']); print('<br>');} ?>
     
     <label>
       </h5>Введите адрес расположения департамента: </h5><br />
       <input name = "adres" type = "text" <?php if($errors['adres']){print 'class="error"';} ?> value = "<?php print $values['adres']?>" placeholder="Адрес" />
-    </label>
+    </label><br />
     <?php if($errors['adres']) {print($messages['adres']); print('<br>');} ?>
 
     <input class = "SaveBut" type="submit" value="Сохранить" />
