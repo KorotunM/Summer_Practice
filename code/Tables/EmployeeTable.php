@@ -52,7 +52,7 @@ $employee = $sth->fetchAll();
       $sth->execute();
       $dept = $sth->fetchAll();
       foreach($dept as $d){
-      if($emp['department_id'] == $d['department_id']){$department_name = $d['department_name']; break;}
+      if($emp['department_id'] == $d['department_id']){ $department_name = $d['department_name']; print($department_name);break;}
       }
       printf('
       <tr>
