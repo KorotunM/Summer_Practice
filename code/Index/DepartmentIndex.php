@@ -37,7 +37,7 @@ else {
  $errors = FALSE;
 
  $patternDep = '/^[\p{Cyrillic}A-Za-z0-9\s]+$/u';
- if (preg_match($patternDep, $_POST['department'])) {
+ if (empty($_POST['department']) || !preg_match($patternDep, $_POST['department'])) {
     setcookie('department_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
@@ -50,7 +50,7 @@ else {
  setcookie('fio_value', $_POST['fio'], time() + 12 * 30 * 24 * 60 * 60);
 
  $pattern = '/^[0-9\p{Cyrillic}A-Za-z,\s.\-]+$/u';
- if (preg_match($pattern, $_POST['adres'])) {
+ if (empty($_POST['adres']) || !preg_match($pattern, $_POST['adres'])) {
     setcookie('adres_error','1',time() + 24 * 60 * 60);
     $errors = TRUE;
 }
