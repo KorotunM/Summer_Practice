@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $employee_id = $_POST['employee'];
         $item_id = $_POST['item'];
         try {
-            $stmt = $db->prepare("INSERT INTO employee (item_id, employee_id, quantity, purpose) VALUES (?, ?, ?, ?)");
+            $stmt = $db->prepare("INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (?, ?, ?, ?)");
             $stmt->execute([$item_id, $employee_id, $_POST['quantity'], $_POST['purpose']]);
         } catch (PDOException $ex) {
             print ('Error : ' . $ex->getMessage());
