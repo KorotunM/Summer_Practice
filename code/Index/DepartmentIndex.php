@@ -78,6 +78,9 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
+    foreach($_COOKIE as $key => $value) {
+        setcookie($key, '', 100000);
+      }
     setcookie('id_value','', 10000,'/');
 } else {
     try {
@@ -87,6 +90,9 @@ else {
         print('Error : ' . $ex->getMessage());
         exit();
     }
+    foreach($_COOKIE as $key => $value) {
+        setcookie($key, '', 100000);
+      }
 }
 setcookie('save','1');
 header('Location: ../Tables/DepartmentTable.php');
