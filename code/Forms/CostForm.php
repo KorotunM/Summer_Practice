@@ -28,9 +28,9 @@
             <select name="type" <?php if ($errors['type']) {
                 print 'class="error"';
             } ?>>
-                <option <?php $values['type'] == 'кг' ? 'selected' : '' ?> value="кг">кг</option>
-                <option <?php $values['type'] == 'шт' ? 'selected' : '' ?> value="шт">шт</option>
-                <option <?php $values['type'] == 'гр' ? 'selected' : '' ?> value="гр">гр</option>
+                <option <?php echo $values['type'] == 'кг' ? 'selected' : '' ?> value="кг">кг</option>
+                <option <?php echo $values['type'] == 'шт' ? 'selected' : '' ?> value="шт">шт</option>
+                <option <?php echo $values['type'] == 'гр' ? 'selected' : '' ?> value="гр">гр</option>
             </select>
         </label><br />
         <?php if ($errors['type']) {
