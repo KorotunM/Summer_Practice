@@ -51,7 +51,10 @@ $employee = $sth->fetchAll();
       $sth = $db->prepare("SELECT*FROM department");
       $sth->execute();
       $dept = $sth->fetchAll();
-      foreach($dept as $d){if($emp['department_id'] == $d['department_id']) $department_name = $d['department_name']; break;}
+      foreach($dept as $d){
+        if($emp['department_id'] == $d['department_id']) {
+        $department_name = $d['department_name']; break;}
+      }
       printf('
       <tr>
       <td>%d</td>
