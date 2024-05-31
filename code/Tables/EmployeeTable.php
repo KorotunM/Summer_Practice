@@ -22,10 +22,10 @@ setcookie('id_value', '', 100000, '/');
 <body>
 
   <ul>
-    <li><a href="CostTable.php">Список затрат</a></li>
-    <li><a href="DepartmentTable.php">Список департаментов</a></li>
-    <li><a href="EmployeeTable.php">Список Сотрудников</a></li>
-    <li><a href="OfficeLogTable.php">Журнал расхода канцтоваров</a></li>
+    <li><a href="CostTable.php">⚡️ Список затрат</a></li>
+    <li><a href="DepartmentTable.php">⚡️ Список департаментов</a></li>
+    <li><a href="EmployeeTable.php">⚡️ Список cотрудников</a></li>
+    <li><a href="OfficeLogTable.php">⚡️ Журнал расхода канцтоваров</a></li>
   </ul>
 
   <?php
@@ -35,16 +35,15 @@ setcookie('id_value', '', 100000, '/');
   $employee = $sth->fetchAll();
   ?>
 
-  <h2>Таблица Сотрудников</h2>
+  <h2>Таблица сотрудников</h2>
   <table class="employee">
     <tr>
       <th>ID_Сотрудника</th>
-      <th>Название_Департамаента</th>
+      <th>Название департамента</th>
       <th>ФИО</th>
       <th>Телефон</th>
       <th>Email</th>
       <th>Должность</th>
-      <th class="action"></th>
     </tr>
     <?php
     foreach ($employee as $emp) {

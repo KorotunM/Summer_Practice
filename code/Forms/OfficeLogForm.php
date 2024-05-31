@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Летняя практика</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Forms/style2.css">
 </head>
 
 <body>
     <form action="../Index/OfficeLogIndex.php" method="POST">
-        <h2>Форма Журнала отчёта</h2>
+        <h2>Журнал отчёта</h2>
         <label>
             <h5>Выберите сотрудника, внёсшего изменения:</h5><br />
             <?php
@@ -80,7 +80,7 @@
         } ?>
 
         <label>
-            <h5> Укажите цель расходов канцтоваров: </h5>
+            <h5> Укажите цель расходов канцтоваров: </h5><br />
             <input name="purpose" type="text" <?php if ($errors['purpose']) {
                 print 'class="error"';
             } ?>

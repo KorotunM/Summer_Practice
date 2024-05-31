@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Летняя практика</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Forms/style2.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         } ?>
 
         <label>
-            </h5>Укажите единицу измерения канцтовара: </h5><br />
+            <h5>Укажите единицу измерения канцтовара: </h5><br />
             <select name="type" <?php if ($errors['type']) {
                 print 'class="error"';
             } ?>>
@@ -39,7 +39,7 @@
         } ?>
 
         <label>
-            </h5>Введите цену за единицу продукта: </h5><br />
+            <h5>Введите цену за единицу продукта: </h5><br />
             <input name="price" type="number" step="0.1" <?php if ($errors['price']) {
                 print 'class="error"';
             } ?>

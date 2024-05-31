@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Летняя практика</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../Forms/style2.css">
 </head>
 
 <body>
 <form action="../Index/EmployeeIndex.php" method="POST">
-    <h2>Форма Сотрудника</h2>
+    <h2>Форма cотрудника</h2>
     <label>
       <h5>Введите ваше ФИО:</h5><br />
       <input name="fio" type = "text" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" placeholder="ФИО" />
@@ -30,13 +30,13 @@
     <?php if ($errors['email']) {print($messages['email']); print('<br>');}?>
 
     <label>
-      </h5>Введите занимаемую, должность: </h5><br />
+      <h5>Введите занимаемую, должность: </h5><br />
       <input name = "position" type = "text" <?php if($errors['position']){print 'class="error"';} ?> value = "<?php print $values['position']?>" placeholder="должность" />
     </label>
     <?php if($errors['position']) {print($messages['position']); print('<br>');} ?>
 
     <label>
-      <h5> Выберите департамент cотрудника: </h5>
+      <h5> Выберите департамент cотрудника: </h5><br />
       <?php
       include('../password.php');
       $sth=$db->prepare("SELECT DISTINCT department_name, department_id FROM department");
