@@ -51,3 +51,11 @@ INSERT INTO employee (department_id, fio, tel, email, position) VALUES (3, 'Дм
 INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (1, 1, 5, 'Закупка сахара для отдела продаж');
 INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (2, 2, 50, 'Канцелярия для бухгалтерии');
 INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (3, 3, 10, 'Шоколакдки для сотрудников IT отдела');
+
+DROP TABLE IF EXISTS office_log;
+
+DROP TABLE IF EXISTS employee;
+
+DROP TABLE IF EXISTS department;
+
+DROP TABLE IF EXISTS cost;
