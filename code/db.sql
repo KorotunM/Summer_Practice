@@ -21,8 +21,7 @@ CREATE TABLE employee (
     tel VARCHAR(20) NOT NULL,
     email VARCHAR(255) NOT NULL,
     position VARCHAR(255) NOT NULL,
-    PRIMARY KEY(employee_id),
-    FOREIGN KEY(department_id) REFERENCES department(department_id)
+    PRIMARY KEY(employee_id)
 );
 
 CREATE TABLE office_log (
@@ -31,9 +30,7 @@ CREATE TABLE office_log (
     employee_id INT(10) NOT NULL,
     quantity INT(10) NOT NULL,
     purpose VARCHAR(255) NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY(item_id) REFERENCES cost(item_id),
-    FOREIGN KEY(employee_id) REFERENCES employee(employee_id)
+    PRIMARY KEY(id)
 );
 
 INSERT INTO cost (item_name, item_type, price_per_unit) VALUES ('Сахар', 'кг', 45.50);
@@ -44,9 +41,9 @@ INSERT INTO department (department_name, manager_name, adres) VALUES ('Отде�
 INSERT INTO department (department_name, manager_name, adres) VALUES ('Бухгалтерия', 'Петр Петров', 'ул. Пушкина, 2');
 INSERT INTO department (department_name, manager_name, adres) VALUES ('IT отдел', 'Анна Сидорова', 'ул. Чехова, 3');
 
-INSERT INTO employee (department_id, fio, tel, email, position) VALUES (1, 'Алексей Смирнов', '89012345678', 'smirnov@example.com', 'Менеджер по продажам');
-INSERT INTO employee (department_id, fio, tel, email, position) VALUES (2, 'Мария Иванова', '89023456789', 'ivanova@example.com', 'Бухгалтер');
-INSERT INTO employee (department_id, fio, tel, email, position) VALUES (3, 'Дмитрий Козлов', '89034567890', 'kozlov@example.com', 'Системный администратор');
+INSERT INTO employee (department_id, fio, tel, email, position) VALUES (1, 'Алексей Смирнов', '+89012345678', 'smirnov@example.com', 'Менеджер по продажам');
+INSERT INTO employee (department_id, fio, tel, email, position) VALUES (2, 'Мария Иванова', '+89023456789', 'ivanova@example.com', 'Бухгалтер');
+INSERT INTO employee (department_id, fio, tel, email, position) VALUES (3, 'Дмитрий Козлов', '+89034567890', 'kozlov@example.com', 'Системный администратор');
 
 INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (1, 1, 5, 'Закупка сахара для отдела продаж');
 INSERT INTO office_log (item_id, employee_id, quantity, purpose) VALUES (2, 2, 50, 'Канцелярия для бухгалтерии');
